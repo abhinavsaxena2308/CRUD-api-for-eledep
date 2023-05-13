@@ -22,6 +22,7 @@ class StudentController {
         }
     }
 
+    //display all data
     static getAllDoc = async(req, res) =>{
         try {
             const result = await StudentModel.find()
@@ -35,7 +36,7 @@ class StudentController {
         
     }
 
-    //Show Edit Form with data      
+    //edit      
     static editDoc = async(req, res) =>{
         try {
             const result = await StudentModel.findById(req.params.id)
