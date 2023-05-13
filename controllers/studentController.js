@@ -25,7 +25,7 @@ class StudentController {
     static getAllDoc = async(req, res) =>{
         try {
             const result = await StudentModel.find()
-            console.log(result)
+            // console.log(result)
             res.render("index" , {data:result})
             
         } catch (error) {
