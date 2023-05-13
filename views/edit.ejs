@@ -1,0 +1,38 @@
+<%- include('./partials/header.ejs') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 mt-5 ">
+            <h2 class="alert alert-success text-center">Update Student</h2>
+            <form method="post" action="/student/update/<%= data._id%>">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" value="<%= data.name %>"/>
+                </div>
+                <div class="mb-3">
+                    <!-- <label for="roll" class="form-label">Roll no.</label>
+                    <input type="text" class="form-control" id="roll" name="roll" value="<%= data.roll %>" />
+                </div> -->
+                <div class="mb-3">
+                    <label for="number" class="form-label">Phone Number</label>
+                    <input type="number" class="form-control" id="number" name="number" value="<%= data.number %>"/>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" value="<%= data.email%>"/>
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Photo Link</label>
+                    <input type="url" class="form-control" id="photo" name="photo" value="<%= data.photo%>"/>
+                </div>
+                <button type="submit" class="btn btn-warning">Update</button>
+                <button type="submit" class="btn btn-secondary ml-3">Back to Home</button>
+                <button type="reset" class="btn btn-danger ml-3">Reset</button>
+            </form>
+        </div>
+        
+    </div>
+</div>
+    
+
+<%- include('./partials/footer.ejs') %>
