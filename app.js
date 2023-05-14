@@ -2,10 +2,13 @@ import express from "express";
 import connectDB from "./db/connectDB.js";
 import { join } from "path";
 import web from "./routes/web.js";
+import dot from "dotenv";
 
 const app = express()
-const port = process.env.PORT || '3000'
-const DATABASE_URL = process.env.DATABASE_URL || 'mongodb+srv://eledep2023:eledep2023@cluster0.y1dnqfx.mongodb.net/data';
+dot.config().parsed;
+const port = process.env.PORT 
+const DATABASE_URL = process.env.DATABASE_URL
+
 
 connectDB(DATABASE_URL);
 
@@ -23,5 +26,6 @@ app.use("/student",web);
 
 
 app.listen(port, () => {
-    console.log('server started at port 3000')
+    console.log('server started at port 3000');
+    // console.log(dot.config());
  })
