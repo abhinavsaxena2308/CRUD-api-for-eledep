@@ -9,4 +9,4 @@ npm i mongoose
   
 #after this to run the server use the following code 
 
-  nodemon app.js
+nodemon app.js
