@@ -4,7 +4,7 @@ import mongoose, { mongo } from "mongoose";
 
 const NewSchema = new mongoose.Schema({
     name:{type:String},
-    roll:{type:Number},
+    roll:{type:String},
     number:{type:Number},
     email:{type:String},
     photo:{type:String}
