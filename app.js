@@ -21,6 +21,7 @@ app.use('/student/edit',express.static(join(process.cwd(), "public")))
 //Set Template Engine
 app.set("view engine" , "ejs")
 
+
 //Load Routes
 app.use("/student",web);
 
@@ -29,4 +30,3 @@ app.listen(port, () => {
     console.log('server started at port 3000');
     // console.log(dot.config());
  })
- 
