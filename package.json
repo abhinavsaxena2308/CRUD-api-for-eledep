@@ -5,13 +5,14 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app",
-    "build":"npm i"
+    "build": "npm i"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "mongoose": "^7.1.1",
