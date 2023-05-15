@@ -4,7 +4,7 @@ import mongoose, { mongo } from "mongoose";
 
 const NewSchema = new mongoose.Schema({
     name:{type:String},
-    roll:{type:String},
+    roll:{type:Number},
     number:{type:Number},
     email:{type:String},
     photo:{type:String}
@@ -14,3 +14,4 @@ const NewSchema = new mongoose.Schema({
 const StudentModel = mongoose.model("first_year", NewSchema)
 
 export default StudentModel
+
