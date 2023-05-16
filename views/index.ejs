@@ -4,121 +4,188 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>ELEDEP API</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/all.css">
+     
 </head>
 
-<body style="background-color: blueviolet;">
-    <h1 class="text-center mt-3 mb-5" style="font-weight: bolder; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #fff;" >CRUD API FOR ELEDEP</h1>
-
+<body>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6" style="margin-left: 270px;">
+        
+        <div class=" text-center mt-5 ">
+            <h1 style="font-weight: bold;">CRUD API FOR ELEDEP</h1>
+        </div>
+         <div class="col ">
+            <div class="col-lg-7 mx-auto">
                 <h2 class="alert alert-success text-center" style="font-weight: bolder;">Add New Student</h2>
-                <form method="post">
-                    <div class="mb-3">
-                        <label for="name" class="form-label" style="color:#fff; font-weight: 700;">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" style="color:#000; font-weight: 300;"/>
-                    </div>
-                    <div class="mb-3">
-                        <label for="roll" class="form-label" style="color:#fff; font-weight: 700;">Roll no.</label>
-                        <input type="number" class="form-control" id="roll" name="roll" style="color:#000; font-weight: 300;"/>
-                    </div>
-                    <div class="mb-3">
-                        <label for="number" class="form-label" style="color:#fff; font-weight: 700;">Phone Number</label>
-                        <input type="number" class="form-control" id="number" name="number" style="color:#000; font-weight: 300;"/>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label" style="color:#fff; font-weight: 700;">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" style="color:#000; font-weight: 300;"/>
-                    </div>
-                    <div class="mb-3">
-                        <label for="name" class="form-label" style="color:#fff; font-weight: 700;">Photo Link</label>
-                        <input type="url" class="form-control" id="photo" name="photo" style="color:#000; font-weight: 300;"/>
-                    </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                    <button type="reset" class="btn btn-danger ml-3">Reset</button>
-                </form>
-            </div>
-            <div  class="col-sm-18" style="margin-left: -180px;">
-                <h2 class="alert alert-danger text-center mt-3" style="font-weight: bolder;">List of Students</h2>
-                <%# Show All Data %>
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr >
-                                <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">No.</th>
-                                <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Name</th>
-                                <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Roll-No</th>
-                                <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Phone-no</th>
-                                <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Email</th>
-                                <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Photo</th>
-                                <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Action</th>
+                <div class="card mt-2 mx-auto p-4 " style="background-color: lightcoral;">
+                    <div class="card-body" style="background-color: lightcoral;">
+                        <div class="container">
+                            <form id="contact-form" role="form" method="post">
+                                <div class="controls">
+                                    <div class="row">
+                                        <div class="col-md-6">
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% var i=1 %>
-                                <% data.forEach((item)=>{ %>
-                                    <tr>
-                                        <td style="color:#fff; font-weight: 500;">
-                                            <%= i++ %>
-                                        </td>
-                                        <td style="color:#fff; font-weight: 500;">
-                                            <%= item.name %>
-                                        </td>
-                                        <td style="color:#fff; font-weight: 500;">
-                                            <%= item.roll %>
-                                        </td>
-                                        <td style="color:#fff; font-weight: 500;">
-                                            <%= item.number %>
-                                        </td>
-                                        <td style="color:#fff; font-weight: 500;">
-                                            <%= item.email %>
-                                        </td>
-                                        <td style="color:#fff; font-weight: 500;">
-                                            <%= item.photo %>
-                                        </td>
-                                        <td>
-                                            <form action="/student/edit/<%= item._id %>" method="get" class="d-inline">
-                                                <button type="submit" class="btn" style="border-radius: 100%;">
-                                                    <i class="fas fa-pen-square text-info"></i>
-                                                </button>
-                                            </form>
-                                            <form action="/student/delete/<%= item._id %>" method="post"
-                                                class="d-inline">
-                                                <button type="submit" class="btn" style="border-radius: 100%;">
-                                                    <i class="fas fa-trash text-danger"></i>
-                                                </button>
-                                            </form>
+                                            <div class="form-group">
+                                                <label for="form_name">Name</label>
+                                                <input  type="text" name="name" class="form-control"
+                                                     required="required"
+                                                    for="name" id="name">
+                                            </div>
 
-                                        </td>
-                                    </tr>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
 
-                                    <% })%>
+                                            <div class="form-group">
+                                                <label for="form_name">Roll No.</label>
+                                                <input id="form_name" type="number" name="roll" class="form-control"
+                                                    required="required"
+                                                    data-error="Firstname is required." id="roll" for="roll">
+                                            </div>
 
-                        </tbody>
-                    </table>
-            </div>
-        </div>
-    </div>
-     </div>
-     <footer class="text-center text-white" style="width: 100%;">
-        <div class="container pt-4">
-            <section class="mb-4" style="background-color: rgba(0, 0, 0, 0.2);">
-                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/abhinavsaxena2308" target="next" role="button"
-                    data-mdb-ripple-color="dark"><i class="fab fa-github" style="color:#fff;"></i>
-                    <h4 style="color:#fff; font-weight: 500;">Abhinav Saxena</h4>
-                </a>
-                <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                    <p style="color:#fff; font-weight: 500;">Made using Express js</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
 
+                                            <div class="form-group">
+                                                <label for="form_name">Phone No.</label>
+                                                <input id="form_name" type="number" name="number" class="form-control"
+                                                     required="required"
+                                                    data-error="Firstname is required." id="phone" for="phone">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group">
+                                                <label for="form_email">Email</label>
+                                                <input id="form_email" type="email" name="email" class="form-control"
+                                                    required="required"
+                                                    id="email" for="email">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="form_message">Photo Link</label>
+                                                <textarea id="form_message" name="photo" class="form-control"
+                                                     required="required"
+                                                    id="photo"></textarea>
+                                            </div>
+
+                                        </div>
+                                    
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                        <button type="reset" class="btn btn-danger ml-3">Reset</button>
+                                    </div>
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
         </div>
-    </footer>
+        <div>
+            <h2 class="alert alert-danger text-center mt-3" style="font-weight: bolder;">List of Students</h2>
+        <%# Show All Data %>
+        <table class="table table-striped table-hover mt-5">
+            <thead>
+                <tr >
+                    <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">No.</th>
+                    <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Name</th>
+                    <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Roll-No</th>
+                    <!-- <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Phone-no</th> -->
+                    <!-- <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Email</th> -->
+                    <!-- <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Photo</th> -->
+                    <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Action</th>
 
+                </tr>
+            </thead>
+            <tbody>
+                <% var i=1 %>
+                    <% data.forEach((item)=>{ %>
+                        <tr>
+                            <td style="color:#fff; font-weight: 500;">
+                                <%= i++ %>
+                            </td>
+                            <td style="color:#fff; font-weight: 500;">
+                                <%= item.name %>
+                            </td>
+                            <td style="color:#fff; font-weight: 500;">
+                                <%= item.roll %>
+                            </td>
+                            <!-- <td style="color:#fff; font-weight: 500;">
+                                <%= item.number %>
+                            </td> -->
+                            <!--
+                            <td style="color:#fff; font-weight: 500;">
+                                <%= item.email %>
+                            </td>  -->
+                            <!-- <td style="color:#fff; font-weight: 500;">
+                                <%= item.photo %>
+                            </td> -->
+                            <td>
+                                <form action="/student/edit/<%= item._id %>" method="get" class="d-inline">
+                                    <button type="submit" class="btn" style="border-radius: 100%;">
+                                        <i class="fas fa-pen-square text-info"></i>
+                                    </button>
+                                </form>
+                                <form action="/student/delete/<%= item._id %>" method="post"
+                                    class="d-inline">
+                                    <button type="submit" class="btn" style="border-radius: 100%;">
+                                        <i class="fas fa-trash text-danger"></i>
+                                    </button>
+                                </form>
+
+                            </td>
+                        </tr>
+
+                        <% })%>
+
+            </tbody>
+        </table>
+    </div>
+    
+    </div>
+    
+    
+    <footer>
+        <footer class="text-center text-lg-start mt-5" style="background-color:#54456b;">
+            <div class="container d-flex justify-content-center py-5">
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/abhinavsaxena2308" target="next" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-github" style="color:#fff; font-size: xx-large;"></i>
+                </a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/abhi_23082k3/" target="next" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-instagram" style="color:#fff;font-size: xx-large;"></i>
+                </a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://t.me/SSB_hai_hojayega" target="next" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-telegram" style="color:#fff;font-size: xx-large;"></i>
+                </a>
+
+                
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                <b>Developed By Abhinav Saxena<br/>Made using ExpressJs</b>
+                <!-- <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a> -->
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+
+        <!-- End of .container -->
+    </footer>
 
     <script src="js/bootstrap.bund le.js"></script>
     <script src="js/all.js"></script>

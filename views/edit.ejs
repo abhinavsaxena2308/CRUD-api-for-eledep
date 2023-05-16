@@ -1,71 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Update</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/all.css">
 </head>
+<body>
+    <div class=" text-center mt-5 ">
+        <h1 style="font-weight: bold;">CRUD API FOR ELEDEP</h1>
+    </div>
+    <div class="col ">
+        <div class="col-lg-7 mx-auto">
+            <h2 class="alert alert-success text-center" style="font-weight: bolder;">Update Student</h2>
+            <div class="card mt-2 mx-auto p-4 " style="background-color: lightcoral;">
+                <div class="card-body" style="background-color: lightcoral;">
+                    <div class="container">
+                        <form id="contact-form" role="form"  action="/student/update/<%= data._id%>" method="post">
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-6">
 
-<body style="background-color: blueviolet;">
-    
-    
-    <h1 class="text-center mt-3 mb-5 mr-5" style="font-weight: bolder; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #fff;" >CRUD API FOR ELEDEP</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-6  " style="margin-left: 250px;">
-                <h2 class="alert alert-success text-center" style="font-weight: bolder;">Update Student</h2>
-                <form method="post" action="/student/update/<%= data._id%>">
-                    <div class="mb-3">
-                        <label for="name" class="form-label" style="color:#fff; font-weight: 500;">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" value="<%= data.name %>" style="color:#000; font-weight: 300;"/>
+                                        <div class="form-group">
+                                            <label for="form_name">Name</label>
+                                            <input  type="text" name="name" class="form-control"
+                                                 required="required" value="<%= data.name %>"
+                                                for="name" id="name">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <label for="form_name">Roll No.</label>
+                                            <input id="form_name" type="number" name="roll" class="form-control"
+                                                required="required" value="<%= data.roll %>"
+                                                data-error="Firstname is required." id="roll" for="roll">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <label for="form_name">Phone No.</label>
+                                            <input id="form_name" type="number" name="number" class="form-control"
+                                                 required="required" value="<%= data.number %>"
+                                                data-error="Firstname is required." id="phone" for="phone">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <label for="form_email">Email</label>
+                                            <input id="form_email" type="email" name="email" class="form-control"
+                                                required="required" value="<%= data.email %>"
+                                                id="email" for="email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label for="form_message">Photo Link</label>
+                                            <input id="form_message" name="photo" class="form-control"
+                                                 required="required" value="<%= data.photo %>"
+                                                id="photo"/>
+                                        </div>
+
+                                    </div>
+                                
+                                </div>
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-warning" style="color:#000; font-weight: bold;" >Update</button>
+                                    <button type="submit" class="btn btn-secondary" style="color:#fff; font-weight: bold;">Back to Home</button>
+                                    <button type="reset" class="btn btn-danger" style="color:#fff; font-weight: bold;">Reset</button>
+                                </div>
+                                </div>
+                        </form>
                     </div>
-                    <div class="mb-3">
-                        <label for="roll" class="form-label" style="color:#fff; font-weight: 500;">Roll no.</label>
-                    <input type="text" class="form-control" id="roll" name="roll" value="<%= data.roll %>" style="color:#000; font-weight: 300;"/>
                 </div>
-                        <div class="mb-3">
-                            <label for="number" class="form-label" style="color:#fff; font-weight: 500;">Phone Number</label>
-                            <input type="number" class="form-control" id="number" name="number"
-                                value="<%= data.number %>" style="color:#000; font-weight: 300;"/>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label" style="color:#fff; font-weight: 500;">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" value="<%= data.email%>" style="color:#000; font-weight: 300;"/>
-                        </div>
-                        <div class="mb-3">
-                            <label for="name" class="form-label" style="color:#fff; font-weight: 500;">Photo Link</label>
-                            <input type="url" class="form-control" id="photo" name="photo" value="<%= data.photo%>" style="color:#000; font-weight: 300;"/>
-                        </div>
-                        <button type="submit" class="btn btn-warning w-100" style="color:#000; font-weight: bold;" >Update</button>
-                        <button type="submit" class="btn btn-secondary w-100 mt-3 " style="color:#fff; font-weight: bold;">Back to Home</button>
-                        <button type="reset" class="btn btn-danger w-100 mt-3" style="color:#fff; font-weight: bold;">Reset</button>
-                </form>
             </div>
-
         </div>
     </div>
-    <footer class="text-center text-white"  >
-        <div class="container pt-4" >
-            <section class="mb-4" style="background-color: rgba(0, 0, 0, 0.2);" >
+    <footer>
+        <footer class="text-center text-lg-start mt-5" style="background-color:#54456b;">
+            <div class="container d-flex justify-content-center py-5">
                 <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/abhinavsaxena2308" target="next" role="button"
-                    data-mdb-ripple-color="dark"><i class="fab fa-github" style="color:#fff;"></i>
-                    <h4 style="color:#fff; font-weight: 500;">Abhinav Saxena</h4>
+                    data-mdb-ripple-color="dark"><i class="fab fa-github" style="color:#fff; font-size: xx-large;"></i>
                 </a>
-                <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                    <p style="color:#fff; font-weight: 500;">Made using Express js</p>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/abhi_23082k3/" target="next" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-instagram" style="color:#fff;font-size: xx-large;"></i>
+                </a>
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://t.me/SSB_hai_hojayega" target="next" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-telegram" style="color:#fff;font-size: xx-large;"></i>
+                </a>
 
-                </div>
-            </section>
-        </div>
+                
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                <b>Developed By Abhinav Saxena<br/>Made using ExpressJs</b>
+                <!-- <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a> -->
+            </div>
+            <!-- Copyright -->
+        </footer>
+
+
+        <!-- End of .container -->
     </footer>
-
 
     <script src="js/bootstrap.bund le.js"></script>
     <script src="js/all.js"></script>
 </body>
-
 </html>
