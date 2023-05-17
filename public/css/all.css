@@ -7997,10 +7997,17 @@ label{
   font-weight: bold;
 }
 
-button{
+/* button{
   margin-left: 17px;
-}
+} */
 
 input{
   width: 10px;
+}
+
+.heading{
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

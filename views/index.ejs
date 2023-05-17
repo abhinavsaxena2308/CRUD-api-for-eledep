@@ -12,14 +12,25 @@
 </head>
 
 <body>
+    <!-- <footer class="text-center text-lg-start" style="background-color:#54456b;"> -->
+        
+        <!-- Copyright -->
+        <div class="text-center text-white " style="background-color:#54456b; height: fit-content; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+            
+            <h1 class="heading">CRUD API FOR ELEDEP</h1>
+        </div>
+        <!-- Copyright -->
+    <!-- </footer> -->
     <div class="container">
         
+        
         <div class=" text-center mt-5 ">
-            <h1 style="font-weight: bold;">CRUD API FOR ELEDEP</h1>
+            
+            <!-- <h1 style="font-weight: bold;">CRUD API FOR ELEDEP</h1> -->
         </div>
          <div class="col ">
             <div class="col-lg-7 mx-auto">
-                <h2 class="alert alert-success text-center" style="font-weight: bolder;">Add New Student</h2>
+                <h2 class="alert alert-success text-center" style="font-weight: bolder; margin-top: -30px;">Add New Student</h2>
                 <div class="card mt-2 mx-auto p-4 " style="background-color: lightcoral;">
                     <div class="card-body" style="background-color: lightcoral;">
                         <div class="container">
@@ -84,7 +95,7 @@
                                         </div>
                                     
                                     </div>
-                                    <div class="col-md-12">
+                                    <div class="col-md-12 d-flex ">
                                         <button type="submit" class="btn btn-success">Submit</button>
                                         <button type="reset" class="btn btn-danger ml-3">Reset</button>
                                     </div>
@@ -96,18 +107,18 @@
             </div>
         </div>
         <div>
-            <h2 class="alert alert-danger text-center mt-3" style="font-weight: bolder;">List of Students</h2>
+            <h2 class="alert alert-danger text-center mt-5" style="font-weight: bolder;">List of Students</h2>
         <%# Show All Data %>
-        <table class="table table-striped table-hover mt-5">
+        <table class="table table-striped table-hover ">
             <thead>
                 <tr >
-                    <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">No.</th>
-                    <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Name</th>
-                    <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Roll-No</th>
+                    <th scope="col" style="color:#fff; font-weight: 900;" class="ml-8">No.</th>
+                    <th scope="col" style="color:#fff; font-weight: 900;" class="ml-8">Name</th>
+                    <th scope="col" style="color:#fff; font-weight: 900;" class="ml-8">Roll-No</th>
                     <!-- <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Phone-no</th> -->
                     <!-- <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Email</th> -->
                     <!-- <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Photo</th> -->
-                    <th scope="col" style="color:#fff; font-weight: 700;" class="ml-8">Action</th>
+                    <th scope="col" style="color:#fff; font-weight: 900;" class="ml-8">Action</th>
 
                 </tr>
             </thead>
@@ -115,7 +126,7 @@
                 <% var i=1 %>
                     <% data.forEach((item)=>{ %>
                         <tr>
-                            <td style="color:#fff; font-weight: 500;">
+                            <td style="color:#fff; font-weight: 50;">
                                 <%= i++ %>
                             </td>
                             <td style="color:#fff; font-weight: 500;">

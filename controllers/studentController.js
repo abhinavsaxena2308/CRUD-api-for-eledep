@@ -13,7 +13,8 @@ class StudentController {
                 photo:photo
             })
             const result = await doc.save()
-            console.log(result)
+            console.log(result);
+            // res.send(alert("Hello"))
             
             res.redirect("/student")
         } catch (error) {
